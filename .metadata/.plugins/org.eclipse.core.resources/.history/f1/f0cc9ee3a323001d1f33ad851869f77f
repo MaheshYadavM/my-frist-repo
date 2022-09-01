@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <form action="session" method="get">
+       Enter Name<input type="text" name="NAme"></input></br>
+       Enter id <input type="text" name="IDa"></input><br>
+       <input type="submit">
+   </form>
+</body>
+</html>

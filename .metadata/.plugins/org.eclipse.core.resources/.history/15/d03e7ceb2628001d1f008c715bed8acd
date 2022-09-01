@@ -1,0 +1,36 @@
+package com.session.ex;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class SecondServ
+ */
+@WebServlet("/SecondServ")
+public class SecondServ extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	           res.setContentType("text/html");
+	           PrintWriter out=res.getWriter();
+	           String exp1=req.getParameter("frist_exp");
+	           String skills1=req.getParameter("frist_skills");
+	           HttpSession hs=req.getSession();
+	           
+	           hs.setAttribute("exphs",exp1);
+	           hs.setAttribute("skillshs", skills1);
+		}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

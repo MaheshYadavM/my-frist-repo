@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<form action="sucess" method="post"></form>
+  Firstname:  <input type="text" name="fn"></input><br><br>
+  LastName:<input type="text" name="ln"><br><br>
+  <input type="submit" >
+</body>
+</html>

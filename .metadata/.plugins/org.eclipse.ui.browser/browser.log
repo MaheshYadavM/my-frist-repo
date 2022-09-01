@@ -1,0 +1,4 @@
+
+Aug 25, 2022 18:21:35.13 NEW SESSION
+Aug 25, 2022 18:21:35.13 [4144:5576:0825/182135.130:ERROR:device_event_log_impl.cc(214)] [18:21:35.130] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Aug 25, 2022 18:21:35.13 [4144:5576:0825/182135.131:ERROR:device_event_log_impl.cc(214)] [18:21:35.130] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)

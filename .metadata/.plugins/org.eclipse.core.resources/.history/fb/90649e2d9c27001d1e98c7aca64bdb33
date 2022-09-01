@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HttpSessionApp">
+        <property name="context-root" value="HttpSessionApp"/>
+        <property name="java-output-path" value="/HttpSessionApp/build/classes"/>
+    </wb-module>
+</project-modules>

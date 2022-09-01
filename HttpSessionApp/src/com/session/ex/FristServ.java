@@ -1,0 +1,48 @@
+package com.session.ex;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class FristServ
+ */
+@WebServlet("/FristServ")
+public class FristServ extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		res.setContentType("text/html");
+		PrintWriter out = res.getWriter();
+		String name1 = req.getParameter("ex_name");
+		String address1 = req.getParameter("ex_add");
+		String age1 = req.getParameter("ex_age");
+		HttpSession session = req.getSession(true); 
+		session.setAttribute("namehs", name1);
+		session.setAttribute("addresshs", address1);
+		session.setAttribute("agehs", age1);
+		out.println("<html><title>Frist Servlet</title><body bgcolor=\"orange\"><center>");
+		out.println("<form name=\"\frist\" action=\"./test2\" method=\"post\"><table bgcolor=\"lightblue\">");
+        out.println("<tr><th>Enter ur Experience : </th><td><input type=\"text\" name=\"frist_exp\"value=\"\">");
+        out.println("</td></tr><tr><th>Enter ur skils : </th><td><input type=\"text\" name=\"frist_skills\"value=\"\">");
+        out.println("</td></tr><table><tr><td align=\"center\"><input type=\"submit\" name=\"frist_submit\"value=\"Continue\">");
+        out.println("</td></tr></table></table></from></center></body></html>");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,9 @@
+127.0.0.1 - - [01/Sep/2022:12:19:30 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [01/Sep/2022:12:19:31 +0530] "GET /App/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Sep/2022:12:19:31 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [01/Sep/2022:12:19:43 +0530] "GET /App/login?name=Mahesh&dob=2022-09-07&email=mahesh.m%404-serveinc.com&contact=8186082821 HTTP/1.1" 404 764
+127.0.0.1 - - [01/Sep/2022:12:20:46 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [01/Sep/2022:12:20:46 +0530] "GET /App/ HTTP/1.1" 200 385
+0:0:0:0:0:0:0:1 - - [01/Sep/2022:12:20:59 +0530] "GET /App/login?name=Mahesh&dob=2022-09-07&email=mahesh.m%404-serveinc.com&contact=8186082821 HTTP/1.1" 404 764
+127.0.0.1 - - [01/Sep/2022:12:24:31 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [01/Sep/2022:12:24:46 +0530] "GET /App/login?name=Mahesh&dob=2022-09-07&email=mahesh.m%404-serveinc.com&contact=8186082821 HTTP/1.1" 200 52

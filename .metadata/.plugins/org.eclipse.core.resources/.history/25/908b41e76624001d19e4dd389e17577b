@@ -1,0 +1,35 @@
+package com.exp.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SqServelet extends HttpServlet {
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+
+		int k = (int) req.getAttribute("k");
+		// int k=Integer.parseInt(req.getParameter("k")); redirect
+		String m = (String) req.getAttribute("m");
+		PrintWriter out = res.getWriter();
+		if (m.equalsIgnoreCase(m)) {
+			out.println("enter valid option ");
+			 RequestDispatcher rd1=req.getRequestDispatcher("/index.html");
+    	     rd1.forward(req, res);
+		} else {
+			
+			out.println("Result  is :  " + k);
+		}
+
+		res.setContentType("index.html");
+		out = res.getWriter();
+		String n = req.getParameter("num1");
+		out.println("welcome " + n);
+		out.close();
+
+	}
+}

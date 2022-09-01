@@ -1,0 +1,92 @@
+package com.session.ex;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class FinalServ
+ */
+@WebServlet("/FinalServ")
+public class FinalServ extends HttpServlet {
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		res.setContentType("text/html");
+		PrintWriter out = res.getWriter();
+		String sal1 = req.getParameter("second_sal");
+		float salary = Float.parseFloat(sal1);
+		String location = req.getParameter("second_loc");
+		HttpSession hs = req.getSession(false);
+		String name = (String) hs.getAttribute("namehs");
+		String address = (String) hs.getAttribute("addresshs");
+		String age1 = (String) hs.getAttribute("agehs");
+		int age = Integer.parseInt(age1);
+		String exp = (String) hs.getAttribute("exphs");
+		int experience = Integer.parseInt(exp);
+		String skills = (String) hs.getAttribute("skillshs");
+		
+		try {
+			Class.forName("org.h2.Driver");
+			Connection con=DriverManager.getConnection("jdbc:h2:~/test", "sa","");
+			/*PreparedStatement ps=con.prepareStatement("insert info details values (?,?,?,?,?,?,?))");
+			ps.setString(1, name);
+			ps.setString(2, address);
+			ps.setInt(3, age);
+			ps.setInt(4, experience);
+			ps.setString(5, skills);
+			ps.setFloat(6, salary);
+			ps.setString(7, location);*/
+			
+			Statement stmt=con.createStatement();
+			String sql="SELECT name,address,age,experience,skills,salary,location FROM Registration";
+			
+			ResultSet rs = stmt.executeQuery(sql); 
+			rs.updateString(1, name);
+			rs.updateString(2, address);
+			((PreparedStatement) rs).setInt(3, age);
+			((PreparedStatement) rs).setInt(4, experience);
+			rs.updateString(5, skills);
+			((PreparedStatement) rs).setFloat(6, salary);
+			rs.updateString(7, location);
+			
+			int j=((PreparedStatement) rs).executeUpdate();
+			
+			if(j>0){
+				out.println("<html><body bgcolor=\"lightblue\"><center><h1><font color=\"red\">Successfully");
+				out.println("Inserted</font></h1></center><a href=\"index.html\"Home></a></body></html>");
+			}
+			
+			
+			
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			out.println("<html><body bgcolor=\"cyan\"><center><h1><font color=\"red\">try agin");
+			out.println("Inserted</font></h1></center><a href=\"index.html\"Home></a></body></html>");
+		}
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

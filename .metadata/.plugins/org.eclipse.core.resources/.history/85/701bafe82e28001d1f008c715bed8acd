@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<form name="ex" action="./test1" method="post">
+			<table border="1">
+				<tr>
+					<th align="left">Enter ur name</th>
+					<td><input type="text" name="ex_name" value=""></input></td>
+				</tr>
+
+
+				<tr>
+					<th align="left">Enter ur address</th>
+					<td><textarea name="ex_add" value=""></input></td>
+				</tr>
+
+				<tr>
+					<th align="left">Enter ur age</th>
+					<td><input type="text" name="ex_age" value=""></input></td>
+				</tr>
+
+
+				<tr>
+					<table>
+						<tr>
+							<td align="center"><input type="submit" name="ex_continue"
+								value="Continue"></td>
+						</tr>
+					</table>
+				</tr>
+
+			</table>
+		</form>
+	</center>
+</body>
+</html>
